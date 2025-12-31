@@ -48,6 +48,4 @@ Azure Monitor provides centralized visibility into virtual machines, networks, g
 
 This design follows guidance from Microsoft Learn documentation, Exam Ref AZ-104, Exam Ref AZ-900, and the Microsoft Well-Architected Framework, demonstrating how enterprise virtualization architectures are deployed in practice.
 
-## Architecture Diagram
 
-![Virtualization Cloud Architecture](diagrams/architecture_diagram.png)
