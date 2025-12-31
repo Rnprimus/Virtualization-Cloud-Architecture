@@ -48,4 +48,24 @@ Azure Monitor provides centralized visibility into virtual machines, networks, g
 
 This design follows guidance from Microsoft Learn documentation, Exam Ref AZ-104, Exam Ref AZ-900, and the Microsoft Well-Architected Framework, demonstrating how enterprise virtualization architectures are deployed in practice.
 
+## Skills Demonstrated
+
+This project demonstrates hands-on skills aligned with enterprise cloud and virtualization roles, including:
+
+- Azure virtual network design with segmented Web, Application, and Database tiers
+- Hybrid connectivity using site-to-site VPN
+- Identity and access management using Microsoft Entra ID (RBAC, MFA, conditional access)
+- Secure application delivery using Azure Application Gateway with Web Application Firewall (WAF)
+- Virtual machine deployment and high availability using SQL Server Availability Groups
+- Environment separation for Production, QA/Training, and Dev/Test workloads
+- Backup and disaster recovery planning using Azure Backup and Azure Site Recovery
+- Monitoring and operational visibility using Azure Monitor
+- Alignment with Microsoft Zero Trust principles and the Azure Well-Architected Framework
+
+## Closing Summary
+
+This repository reflects a real-world Azure virtualization architecture designed using Microsoft best practices. It highlights both technical depth and architectural decision-making relevant to enterprise cloud, infrastructure, and security-focused roles.
+
+
+
 
