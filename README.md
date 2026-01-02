@@ -8,6 +8,15 @@ The environment is structured to support Production, QA/Training, and Dev/Test w
 
 ## Architecture Design
 
+### Diagram Interpretation
+
+External users authenticate through Microsoft Entra ID before accessing application resources. Traffic enters through Azure Application Gateway with Web Application Firewall (WAF), which protects against common web threats and enforces HTTPS inspection.
+
+From the gateway, traffic is routed into segmented subnets hosting web and application virtual machines. Database workloads are isolated within dedicated database subnets and protected using Network Security Groups and SQL Server Availability Groups for high availability.
+
+Hybrid access is supported through a site-to-site VPN, allowing secure connectivity between on-premises environments and Azure virtual networks.
+
+
 The architecture incorporates the following core Azure services:
 
 - Microsoft Entra ID for centralized identity, MFA, RBAC, and conditional access
@@ -38,9 +47,26 @@ Each environment mirrors the same network and compute structure to ensure consis
 
 ## Security and Reliability
 
+### Security Controls
+
+Security is implemented using multiple layered controls:
+
+- Network Security Groups (NSGs) restrict traffic between subnets
+- Azure Application Gateway with WAF protects against OWASP Top 10 threats
+- Microsoft Entra ID enforces identity-based access control with RBAC, MFA, and Conditional Access
+- Environment isolation prevents cross-impact between Production and non-production workloads
+
+
 Security is enforced through subnet segmentation, Network Security Groups, Entra ID integration, and Application Gateway WAF. High availability and disaster recovery are achieved using SQL Availability Groups, Azure Backup, and Azure Site Recovery.
 
 ## Monitoring and Operations
+
+### Operational Visibility
+
+Azure Monitor centralizes metrics, logs, and alerts across virtual machines, networking components, and application services. This enables proactive monitoring, faster incident response, and operational insight into system performance and availability.
+
+Backup and disaster recovery are supported through Azure Backup and Azure Site Recovery, providing data protection and business continuity in the event of system failure.
+
 
 Azure Monitor provides centralized visibility into virtual machines, networks, gateways, and applications. Metrics, logs, and alerts support proactive operational management.
 
