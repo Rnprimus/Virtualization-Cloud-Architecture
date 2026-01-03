@@ -35,6 +35,8 @@ This layered approach aligns with Microsoft’s Zero Trust model and the Well-Ar
 ## Architecture Diagram
 
 ![Virtualization Cloud Architecture](diagrams/architecture_diagram.png)
+*Click the image to enlarge for better viewing.*
+
 
 ## Environment Separation
 
