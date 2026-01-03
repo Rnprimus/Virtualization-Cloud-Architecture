@@ -2,7 +2,7 @@
 Enterprise-style virtualization and cloud architecture project
 ## Overview
 
-This project presents an enterprise-ready Azure virtualization and cloud architecture designed using Microsoft best practices. The architecture was developed as a final assessment for a university-level virtualization and cloud computing course and reflects real-world design considerations for security, scalability, and operational resilience.
+This project presents an enterprise-ready Azure virtualization and cloud architecture designed using Microsoft best practices. The architecture was developed as part of a university-level virtualization and cloud computing course and reflects real-world design considerations for security, scalability, and operational resilience.
 
 The environment is structured to support Production, QA/Training, and Dev/Test workloads, each implemented using a consistent three-tier model consisting of Web, Application, and Database subnets.
 
@@ -57,7 +57,6 @@ Security is implemented using multiple layered controls:
 - Environment isolation prevents cross-impact between Production and non-production workloads
 
 
-Security is enforced through subnet segmentation, Network Security Groups, Entra ID integration, and Application Gateway WAF. High availability and disaster recovery are achieved using SQL Availability Groups, Azure Backup, and Azure Site Recovery.
 
 ## Monitoring and Operations
 
@@ -66,9 +65,6 @@ Security is enforced through subnet segmentation, Network Security Groups, Entra
 Azure Monitor centralizes metrics, logs, and alerts across virtual machines, networking components, and application services. This enables proactive monitoring, faster incident response, and operational insight into system performance and availability.
 
 Backup and disaster recovery are supported through Azure Backup and Azure Site Recovery, providing data protection and business continuity in the event of system failure.
-
-
-Azure Monitor provides centralized visibility into virtual machines, networks, gateways, and applications. Metrics, logs, and alerts support proactive operational management.
 
 ## Alignment with Best Practices
 
