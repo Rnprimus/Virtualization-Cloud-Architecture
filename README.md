@@ -2,7 +2,8 @@
 Enterprise-style virtualization and cloud architecture project
 ## Overview
 
-This project presents an enterprise-ready Azure virtualization and cloud architecture designed using Microsoft best practices. The architecture was developed as part of a university-level virtualization and cloud computing course and reflects real-world design considerations for security, scalability, and operational resilience.
+This project presents an enterprise-ready Azure virtualization and cloud architecture designed using Microsoft best practices. The architecture was developed as part of a university-level virtualization and cloud computing course and is structured to reflect real-world enterprise deployment scenarios.
+
 
 The environment is structured to support Production, QA/Training, and Dev/Test workloads, each implemented using a consistent three-tier model consisting of Web, Application, and Database subnets.
 
@@ -47,6 +48,25 @@ Each environment mirrors the same network and compute structure to ensure consis
 
 ## Security and Reliability
 
+### Backup and Disaster Recovery Strategy (ERP Workload)
+
+This architecture is designed to support a fictional enterprise ERP system with environment-specific availability and recovery requirements.
+
+- **Production ERP Environment**
+  - Azure Backup is configured with daily backups and long-term retention using Recovery Services Vault.
+  - Azure Site Recovery (ASR) is enabled for cross-region replication to ensure rapid failover in the event of a regional outage.
+  - This ensures business continuity and data availability for mission-critical ERP workloads.
+
+
+- **QA / Training Environment**
+  - Azure Backup is enabled with reduced retention policies to balance data protection with cost efficiency.
+  - ASR is optional and used only when testing disaster recovery scenarios.
+
+- **Dev / Test Environment**
+  - Backup policies are minimal and focused on short-term recovery.
+  - ASR is not enabled to reduce unnecessary costs, as availability requirements are lower.
+
+
 ### Security Controls
 
 Security is implemented using multiple layered controls:
@@ -69,6 +89,20 @@ Backup and disaster recovery are supported through Azure Backup and Azure Site R
 ## Alignment with Best Practices
 
 This design follows guidance from Microsoft Learn documentation, Exam Ref AZ-104, Exam Ref AZ-900, and the Microsoft Well-Architected Framework, demonstrating how enterprise virtualization architectures are deployed in practice.
+
+## Cost Management and Optimization
+
+Cost management is implemented using native Azure tools to track, allocate, and optimize spending across environments.
+
+- Azure Cost Management and Billing is used to track expenses by environment using resource tags (Production, QA/Training, Dev/Test).
+- Budgets and cost alerts are configured to notify administrators when spending thresholds are approached.
+- Automation and scheduling are used to reduce costs in non-production environments, such as:
+  - Stopping Dev/Test virtual machines during non-business hours
+  - Scaling resources based on workload demand
+- Higher availability and redundancy configurations are reserved for Production workloads, while lower-cost configurations are used for non-production environments.
+
+This approach ensures financial accountability while aligning infrastructure cost with business criticality.
+
 
 ## Skills Demonstrated
 
